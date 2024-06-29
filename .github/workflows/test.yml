@@ -22,7 +22,7 @@ jobs:
       # - uses: taiki-e/install-action@nextest
       - uses: Swatinem/rust-cache@v2
       - uses: giraffate/clippy-action@v1
-      - uses: mbrobbel/rustfmt-check@0.11.0
+      - uses: mbrobbel/rustfmt-check@0.12.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           mode: ${{ github.event_name == 'pull_request' && 'review' || 'commit' }}
