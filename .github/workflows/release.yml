@@ -1,0 +1,50 @@
+name: Release Package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  release:
+    name: release ${{ matrix.job.os }} / ${{ matrix.job.target }}
+    runs-on: ${{ matrix.job.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+          - { os: ubuntu-latest  , target: x86_64-unknown-linux-musl }
+          - { os: macos-latest   , target: x86_64-apple-darwin }
+          - { os: windows-latest , target: x86_64-pc-windows-gnu }
+    steps:
+      - uses: actions/checkout@v4
+        uses: rust-build/rust-build.action@v1.4.5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          RUSTTARGET: ${{ matrix.target }}
+          EXTRA_FILES: "README.md LICENSE"
+          MINIFY: true
+  ghcr:
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: docker/metadata-action@v5
+      id: meta
+      with:
+        images: ghcr.io/${{ github.repository }}
+        tags: |
+          type=semver,pattern={{version}}
+          type=semver,pattern={{major}}.{{minor}}
+    - uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.repository_owner }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    - uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+        build-args: |
+          VERSION=${{ github.event.release.tag_name }}

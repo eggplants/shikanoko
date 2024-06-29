@@ -1,0 +1,10 @@
+[package]
+name = "shikanoko"
+version = "0.1.0"
+edition = "2021"
+authors = ["eggplants <w10776e8w@yahoo.co.jp>"]
+description = "Outputs しか / のこ / こし / たん randomly until repeating しかのこのこのここしたんたん with n times."
+license = "MIT"
+
+[dependencies]
+rand = "0.8.5"
