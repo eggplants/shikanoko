@@ -1,5 +1,11 @@
 # shikanoko
 
+[![Test](
+    <https://github.com/eggplants/shikanoko/actions/workflows/test.yml/badge.svg>
+  )](
+    <https://github.com/eggplants/shikanoko/actions/workflows/test.yml>
+  )
+
 ## What
 
 See: <https://x.com/ikawaha/status/1806852026661511505>
