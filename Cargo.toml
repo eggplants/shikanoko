@@ -1,10 +1,18 @@
 [package]
 name = "shikanoko"
 version = "0.1.0"
-edition = "2021"
 authors = ["eggplants <w10776e8w@yahoo.co.jp>"]
-description = "Outputs しか / のこ / こし / たん randomly until repeating しかのこのこのここしたんたん with n times."
+edition = "2021"
 license = "MIT"
+description = "Outputs しか / のこ / こし / たん randomly until repeating しかのこのこのここしたんたん with n times."
 
 [dependencies]
 rand = "0.8.5"
+
+# cargo run-script <script name>
+[package.metadata.scripts]
+format = "bash -c \"eval 'cargo run-script format:'{dprint,rustfmt,clippy,ymlfxr}';'\""
+"format:dprint" = "dprint fmt"
+"format:rustfmt" = "cargo fmt"
+"format:clippy" = "cargo clippy --fix"
+"format:ymlfxr" = "ymlfxr --fix"

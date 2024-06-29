@@ -16,7 +16,7 @@ jobs:
         - { os: windows-latest , target: x86_64-pc-windows-gnu }
     steps:
       - uses: actions/checkout@v4
-        uses: rust-build/rust-build.action@v1.4.5
+      - uses: rust-build/rust-build.action@v1.4.5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

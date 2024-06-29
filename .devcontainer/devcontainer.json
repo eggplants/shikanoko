@@ -2,11 +2,15 @@
   "name": "Rust",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
+    "ghcr.io/devcontainers/features/git:1": {
+      "ppa": false
+    },
     "ghcr.io/devcontainers/features/rust:1": {},
     "ghcr.io/devcontainers/features/common-utils:2": {}
   },
   "remoteUser": "vscode",
   "containerUser": "vscode",
+  "postCreateCommand": ".devcontainer/postCreate.sh",
   "customizations": {
     "vscode": {
       "extensions": [
