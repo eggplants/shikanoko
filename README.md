@@ -26,7 +26,7 @@ docker pull ghcr.io/eggplants/shikanoko
 
 ## Run
 
-# Cargo, binary
+### Cargo, binary
 
 ```shellsession
 $ shikanoko
