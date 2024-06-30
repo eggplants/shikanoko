@@ -1,6 +1,6 @@
 # shikanoko
 
-[![Test](<https://github.com/eggplants/shikanoko/actions/workflows/test.yml/badge.svg>)](https://github.com/eggplants/shikanoko/actions/workflows/test.yml)
+[![Test](<https://github.com/eggplants/shikanoko/actions/workflows/test.yml/badge.svg>)](https://github.com/eggplants/shikanoko/actions/workflows/test.yml) [![Release Package](https://github.com/eggplants/shikanoko/actions/workflows/release.yml/badge.svg)](https://github.com/eggplants/shikanoko/actions/workflows/release.yml)
 
 ## What
 

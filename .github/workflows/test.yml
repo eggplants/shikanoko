@@ -1,14 +1,11 @@
 name: Test
-
-on:
+"on":
   push:
     branches:
-    - master
-  pull_request:
-
+      - master
+  pull_request: ~
 env:
   CARGO_TERM_COLOR: always
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -17,15 +14,19 @@ jobs:
       - uses: dtolnay/rust-toolchain@nightly
         with:
           # components: clippy, rustfmt, llvm-tools-preview
-          components: clippy, rustfmt
+          components: "clippy, rustfmt"
+
       # - uses: taiki-e/install-action@cargo-llvm-cov
       # - uses: taiki-e/install-action@nextest
+
+      - run: |
+          npm install -g dprint
+          cargo install cargo-run-script
+          # cargo install --git https://github.com/xbcsmith/ymlfxr
+
       - uses: Swatinem/rust-cache@v2
-      - uses: giraffate/clippy-action@v1
-      - uses: mbrobbel/rustfmt-check@0.12.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          mode: ${{ github.event_name == 'pull_request' && 'review' || 'commit' }}
+      - run: cargo run-script format
+
       # - uses: paambaati/codeclimate-action@v6.0.0
       #   env:
       #     CC_TEST_REPORTER_ID: "${{ secrets.CC_TEST_REPORTER_ID }}"

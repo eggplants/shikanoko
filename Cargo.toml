@@ -11,8 +11,7 @@ rand = "0.8.5"
 
 # cargo run-script <script name>
 [package.metadata.scripts]
-format = "bash -c \"eval 'cargo run-script format:'{dprint,rustfmt,clippy,ymlfxr}';'\""
+format = "bash -c \"eval 'cargo run-script format:'{dprint,rustfmt,clippy}'&&' :\""
 "format:dprint" = "dprint fmt"
 "format:rustfmt" = "cargo fmt"
-"format:clippy" = "cargo clippy --fix"
-"format:ymlfxr" = "ymlfxr --fix"
+"format:clippy" = "cargo clippy --fix --allow-dirty --allow-staged"
