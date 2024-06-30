@@ -50,3 +50,7 @@ $ docker run --rm ghcr.io/eggplants/shikanoko 1
 ...しかのこのこのここしたんたん🦌🦌🦌
 Loop duration: 23.08ms
 ```
+
+## LICENSE
+
+MIT
