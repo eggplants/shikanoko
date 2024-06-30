@@ -8,8 +8,8 @@ use std::time::Instant;
 
 fn get_usage() -> String {
     let usage = format!(
-        "USAGE: {} [positive int, defaults 3]",
-        env::current_exe().unwrap().display()
+        "USAGE: {} <positive int>",
+        env::current_exe().unwrap().file_name().unwrap().to_str().unwrap()
     );
     usage
 }
@@ -23,7 +23,10 @@ fn err_exit(message: String) -> ! {
 fn get_n() -> usize {
     let args: Vec<String> = env::args().skip(1).collect();
     let n: usize = match args.len() {
-        0 => 3,
+        0 => {
+            println!("{}", get_usage());
+            process::exit(0);
+        },
         1 => match args[0].parse() {
             Ok(n) => n,
             _ => err_exit("invalid number".to_string()),

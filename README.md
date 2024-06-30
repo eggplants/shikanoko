@@ -6,11 +6,47 @@
 
 See: <https://x.com/ikawaha/status/1806852026661511505>
 
-## Run
+## Install
+
+### Cargo
 
 ```bash
 cargo install --git https://github.com/eggplants/shikanoko
-shikanoko 1
-shikanoko 2
-shikanoko 3
+```
+
+### Binary
+
+See: [Releases](https://github.com/eggplants/shikanoko/releases)
+
+### Docker
+
+```bash
+docker pull ghcr.io/eggplants/shikanoko
+```
+
+## Run
+
+# Cargo, binary
+
+```shellsession
+$ shikanoko
+USAGE: shikanoko <positive int>
+
+$ shikanoko 1
+...しかのこのこのここしたんたん🦌🦌🦌
+Loop duration: 205.09ms
+
+$ shikanoko 2
+...
+
+$ shikanoko 3
+...
+```
+
+### Docker
+
+```shellsession
+$ docker run --rm eggplants/shikanoko 1
+...しかのこのこのここしたんたん🦌🦌🦌
+Loop duration: 23.08ms
 ```
