@@ -1,6 +1,6 @@
 # shikanoko
 
-[![Test](<https://github.com/eggplants/shikanoko/actions/workflows/test.yml/badge.svg>)](https://github.com/eggplants/shikanoko/actions/workflows/test.yml) [![Release Package](https://github.com/eggplants/shikanoko/actions/workflows/release.yml/badge.svg)](https://github.com/eggplants/shikanoko/actions/workflows/release.yml)
+[![Test](<https://github.com/eggplants/shikanoko/actions/workflows/test.yml/badge.svg>)](https://github.com/eggplants/shikanoko/actions/workflows/test.yml) [![Release Package](https://github.com/eggplants/shikanoko/actions/workflows/release.yml/badge.svg)](https://github.com/eggplants/shikanoko/actions/workflows/release.yml) [![Image Size](https://ghcr-badge.egpl.dev/eggplants/shikanoko/size?color=%2344cc11&tag=latest&label=image+size&trim=)](https://github.com/eggplants/shikanoko/pkgs/container/shikanoko)
 
 ## What
 
