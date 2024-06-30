@@ -46,7 +46,7 @@ $ shikanoko 3
 ### Docker
 
 ```shellsession
-$ docker run --rm eggplants/shikanoko 1
+$ docker run --rm ghcr.io/eggplants/shikanoko 1
 ...しかのこのこのここしたんたん🦌🦌🦌
 Loop duration: 23.08ms
 ```
