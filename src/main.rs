@@ -4,8 +4,6 @@ use std::io::{self, Write};
 use std::process;
 use std::time::Instant;
 
-// https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=830afca3cf63b6426b32622107e0e382
-
 fn get_usage() -> String {
     let usage = format!(
         "USAGE: {} <positive int>",
