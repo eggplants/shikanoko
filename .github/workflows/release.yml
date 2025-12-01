@@ -20,7 +20,7 @@ jobs:
           # https://github.com/rust-build/rust-build.action/issues/88
           # - x86_64-apple-darwin
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: rust-build/rust-build.action@v1.4.5
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
@@ -32,7 +32,7 @@ jobs:
     needs: release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: docker/metadata-action@v5
         id: meta
         with:
